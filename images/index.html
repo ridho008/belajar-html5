@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Element</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.125em;
+        line-height: 1.6;
+        color: #333;
+        padding: 2em;
+      }
+
+      .hero {
+        display: grid;
+        grid-gap: 2em;
+        align-items: center;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      @media (min-heigth: 960px) {
+        .hero {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1 style="margin-bottom: 1500px">Image Elements</h1> -->
+    <!-- srcset, berguna untuk menampilkan gambar sesuai dengan pixel gambar dan berdasarkan layar -->
+    <!-- sizes, jika minimal layarnya 1200px kembalikan ukuran gambar medium -->
+    <!-- loading ada 2 jenis, yaitu lazy = load saat discroll dan eager = gambar di load diawal -->
+    <!-- <img
+      src="img/hamster-small.jpg"
+      alt="Hamster"
+      srcset="img/hamster-small.jpg w500, img/cat-medium.jpg 750w, img/rinosaurus-large.jpg w800"
+      sizes="(min-width: 1200px) 50vw"
+      loading="lazy"
+    />
+    <figcaption>Gambar Kucing</figcaption> -->
+
+    <div class="hero">
+      <div class="hero-text">
+        <h1>hELLO</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda
+          est officiis aperiam iste, adipisci libero necessitatibus molestias
+          distinctio enim eveniet.
+        </p>
+      </div>
+      <picture>
+        <source
+          media="(min-width: 960px)"
+          srcset="img/rinosaurus-large.jpg"
+          sizes="50vw"
+        />
+        <source media="(min-width: 600px)" srcset="img/cat-medium.jpg" />
+        <img src="img/hamster-small.jpg" alt="Kucing Medium" />
+      </picture>
+    </div>
+  </body>
+</html>
